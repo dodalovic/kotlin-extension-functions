@@ -15,10 +15,10 @@ val List<Student>.bestStudent: Student? get() = this.sortedByDescending { it.ave
 
 fun List<Student>.aboveAndBelowAverage() = this.partition { it.average >= this.averageMark }
 val List<Student>.highestMark: Int get() = this.flatMap { it.marks }.max() ?: 0
-fun Random.between(lower: Int, upper: Int) = this.nextInt(upper - lower) + lower
+fun Random.betweenInclusive(lower: Int, upper: Int) = this.nextInt(upper - lower) + lower
 
 fun Student.addRandomMarks(): Student {
-    (1..5).forEach { this.addMark(Random().between(1, 6)) }
+    (1..5).forEach { this.addMark(Random().betweenInclusive(1, 6)) }
     return this
 }
 
