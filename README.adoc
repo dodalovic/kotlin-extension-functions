@@ -1,0 +1,51 @@
+= Extension functions in kotlin
+
+== Running example
+
+[source,bash]
+.Execute in project root
+----
+./gradlew -q -PmainClass=rs.dodalovic.extension_functions.StudentsKt execute
+----
+
+Output might be similar to:
+
+----
+**** Students average: 3.22 ****
+
+Above average:
+[
+{'name':'name_4','lastname':'lastname_4','average':'4.0','marks':'[5, 2, 4, 4, 5]'}
+,
+{'name':'name_5','lastname':'lastname_5','average':'4.4','marks':'[5, 5, 4, 4, 4]'}
+,
+{'name':'name_7','lastname':'lastname_7','average':'3.4','marks':'[1, 4, 2, 5, 5]'}
+]
+
+
+Below average:
+[
+{'name':'name_1','lastname':'lastname_1','average':'2.6','marks':'[2, 3, 2, 2, 4]'}
+,
+{'name':'name_2','lastname':'lastname_2','average':'3.2','marks':'[1, 5, 2, 5, 3]'}
+,
+{'name':'name_3','lastname':'lastname_3','average':'2.6','marks':'[4, 1, 2, 1, 5]'}
+,
+{'name':'name_6','lastname':'lastname_6','average':'2.8','marks':'[1, 4, 5, 2, 2]'}
+,
+{'name':'name_8','lastname':'lastname_8','average':'3.2','marks':'[4, 3, 4, 4, 1]'}
+,
+{'name':'name_9','lastname':'lastname_9','average':'3.2','marks':'[1, 4, 5, 5, 1]'}
+,
+{'name':'name_10','lastname':'lastname_10','average':'2.8','marks':'[5, 5, 1, 2, 1]'}
+]
+
+
+Highest mark:
+5
+
+
+Best student:
+
+{'name':'name_5','lastname':'lastname_5','average':'4.4','marks':'[5, 5, 4, 4, 4]'}
+----
