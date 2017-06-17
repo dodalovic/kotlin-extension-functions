@@ -10,10 +10,10 @@ class Student(val name: String, val lastname: String) {
     override fun toString() = "\n{'name':'$name','lastname':'$lastname','average':'$average','marks':'$marks'}\n"
 }
 
-val List<Student>.average: Double get() = this.flatMap { it.marks }.average()
+val List<Student>.averageMark: Double get() = this.flatMap { it.marks }.average()
 val List<Student>.bestStudent: Student? get() = this.sortedByDescending { it.average }.first()
 
-fun List<Student>.aboveAndBelowAverage() = this.partition { it.average >= this.average }
+fun List<Student>.aboveAndBelowAverage() = this.partition { it.average >= this.averageMark }
 val List<Student>.highestMark: Int get() = this.flatMap { it.marks }.max() ?: 0
 fun Random.between(lower: Int, upper: Int) = this.nextInt(upper - lower) + lower
 
@@ -26,7 +26,7 @@ fun main(args: Array<String>) {
     val studentsCount = 10
     val students = (1..studentsCount).map { Student("name_$it", "lastname_$it") }.map { it.addRandomMarks() }.toList()
 
-    println("**** Students average: ${students.average} ****")
+    println("**** Students average: ${students.averageMark} ****")
     val (aboveAverageStudents, belowAverageStudents) = students.aboveAndBelowAverage()
     println("\nAbove average: \n$aboveAverageStudents\n")
     println("\nBelow average: \n$belowAverageStudents\n")
